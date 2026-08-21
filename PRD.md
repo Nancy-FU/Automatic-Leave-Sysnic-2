@@ -23,9 +23,9 @@
 | 资源 | 标识 |
 |---|---|
 | Gmail 账号 | nancy.fu@v.systems |
-| 目标日历 | **VSYS Leaves** (`c_btfvt8btg11kt94an8b33cah7c@group.calendar.google.com`) |
+| 目标日历 | **VSYS Leaves** (`<VSYS_LEAVES_CALENDAR_ID>`) |
 | 时区 | Asia/Hong_Kong |
-| WFH/OOO 日历 | **VSYS MY Attendance**（原名 "VSYS MY WFH"，用户 2026-08-04 改名并扩展用途，`c_26a95cdd8b43824ac05ed0bd90bb3f198f63e1f8ae0fa220b2ec874980a5a1ad@group.calendar.google.com`） |
+| WFH/OOO 日历 | **VSYS MY Attendance**（原名 "VSYS MY WFH"，用户 2026-08-04 改名并扩展用途，`<VSYS_ATTENDANCE_CALENDAR_ID>`） |
 
 ---
 
@@ -73,7 +73,7 @@
 标题里的 `<姓名>` 一律使用 **Preferred Name**，规则和权威数据见同目录下的 **[`roster.json`](roster.json)**（唯一姓名真相来源，不在别处重复维护）：
 
 1. **邮箱能在 `roster.json` 的 `roster[]` 里查到** → 用对应的 `preferredName`（来自 Malaysia Office Basic Info / QB Office Basic Info 两份公司花名册）。
-2. **两个 "Employee 04" 的消歧**：`employee04@example.com` → `Employee 04`；`employee08@example.com` → `Employee 08`。日历上不允许出现裸的 `AL: Employee 04`。
+2. **两位曾用同一简称的员工消歧**：`employee04@example.com` → `Employee 04`；`employee08@example.com` → `Employee 08`。日历上不允许出现裸的、未消歧的简称。
 3. **邮箱不在花名册里** → 按 `roster.json.fallbackRule` 从邮箱本地部分推算：取 `.`/`_`/数字 切分后的第一段并首字母大写（如 `employee13@example.com` → `Employee 13`，`employee24@example.com` → `Employee 24`）。
 4. **本地部分不像姓名格式**（纯数字个人邮箱、连写无分隔符）→ 退回 Gmail 寄件人显示名的名字部分（已知例外见 `roster.json.knownExceptions`，如 `employee18@example.com` → `Employee 18`）。
 5. **无对应来源邮件的手动记录（D 类）**默认不重命名；只有能通过 `roster.json` 里 `employeeFullName` 括号昵称明确对应到人时（如 `Koh Wei Mien (Carol)` ↔ 日历上的 `Carol`）才可能纳入重命名范围，执行前需与用户确认范围。

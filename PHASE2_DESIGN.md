@@ -20,7 +20,7 @@
 ## 2. 目标文件
 
 - 名称：**Leave Record QB 2026**
-- fileId：`18wp90gS4gs0n90ah341Sz4pTd8G7x76f348s0xGhpzg`
+- fileId：`<LEAVE_RECORD_SHEET_FILE_ID>`
 - 位置：My Drive / Leave Record / Leave Record_QB /
 - 一人一个 tab。
 

@@ -57,7 +57,7 @@
 - Employee 25 4/10：按邮件原文"On leave"记为整天（原预期半天），如实际为半天请告知。
 
 ### E. 归档
-- 建立统一项目文件夹：`/Users/nerolifu/Documents/Claude/Leave Arrangement/`
+- 建立统一项目文件夹：`<project-root>/`
 - 新增 `PRD.md`（完整需求 + 防呆规则）、`CHANGELOG.md`（本文件）。
 - 旧 PRD 与 cache 从 `mycodebase/HR ` **复制**（原件保留）至 `archive/`。
 
@@ -85,7 +85,7 @@
 - 发现并请用户修正了花名册自身的错误：`Employee 28` 与 `Employee 29` 曾共用同一邮箱 `employee29@example.com`；用户已在源表格改为 `employee28@example.com` / `employee29@example.com` 分开。
 - 确定命名格式：`<TYPE>: <PreferredName>`，冒号后统一留一个空格。
 - 确定"花名册覆盖不到的人"的处理规则：按邮箱本地部分推算显示名（如 `employee24@example.com` → `Employee 24`），非姓名格式的邮箱（纯数字个人邮箱、连写无分隔符）退回 Gmail 显示名（如 `employee18@example.com` → `Employee 18`）。
-- 两个 "Employee 04" 明确消歧：`employee04@example.com` → `Employee 04`；`employee08@example.com` → `Employee 08`。
+- 消歧两位曾用同一简称的员工：`employee04@example.com` → `Employee 04`；`employee08@example.com` → `Employee 08`。
 - 新增 **`roster.json`**（项目根目录）作为姓名规则与花名册数据的唯一来源，供以后自动化直接读取，不再散落在文档描述里。
 - `PRD.md` 新增 3.1 节"姓名标准化"，第 5 节防呆规则更新姓名规则并补充历史教训（Employee 01/Employee 02 多名字重复案例）。
 - **注意：本次只是把规则和数据存档，尚未对日历上现存事件执行实际改名操作**，执行前需与用户确认是否也覆盖可通过花名册匹配到人的 D 类手动记录。

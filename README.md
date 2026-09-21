@@ -1,4 +1,4 @@
-# VSYS 请假自动化 (Automatic Leave Sync)
+# 请假自动化 (Automatic Leave Sync)
 
 用 [Claude Code](https://claude.com/claude-code) 把公司邮箱里的请假 / WFH / OOO 邮件，自动整理进 Google Calendar 和年假记录表——不用再手动读邮件、算工作日、填表格。
 

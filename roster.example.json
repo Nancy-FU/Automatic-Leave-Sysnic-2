@@ -1,0 +1,53 @@
+{
+  "_comment": "Copy to roster.json (git-ignored) and replace with your real staff list. This is the single source of truth for display names, office and calendar routing. All people below are fictional.",
+  "version": 1,
+  "calendarRouting": {
+    "leave_all_types": {
+      "calendar": "Team Leaves",
+      "note": "All leave types (AL/SL/BL/unpaid/other) go here. Calendar ID lives in config.json."
+    },
+    "attendance": {
+      "calendar": "Team Attendance",
+      "note": "WFH + OOO go here regardless of office.",
+      "types": ["WFH", "OOO"]
+    }
+  },
+  "namingFormat": {
+    "template": "<TYPE>: <PreferredName>",
+    "colonSpacing": "Colon + one space, e.g. 'AL: Alex Chan'",
+    "types": {
+      "AL": "Annual / personal / day off / time off / unpaid",
+      "SL": "Sick / medical",
+      "BL": "Bereavement / compassionate",
+      "WFH": "Work from home -> attendance calendar",
+      "OOO": "Out of office (usually an auto-reply) -> attendance calendar"
+    },
+    "halfDaySuffix": {
+      "am": " (Half-Day AM)  -- 09:00-13:00",
+      "pm": " (Half-Day PM)  -- 14:00-18:00"
+    },
+    "mixedCase": "One email with both leave and WFH -> one event on each calendar."
+  },
+  "oooRule": {
+    "evidenceBar": "Lower than formal leave: the auto-reply comes from the person's own mailbox, so no approval trail is needed. Person + approximate dates is enough.",
+    "dateInference": "If only the return date is stated, use the auto-reply's own date as the start date and note it as inferred.",
+    "phase2Impact": "OOO never deducts any leave balance; calendar-only."
+  },
+  "officeClassification": {
+    "rule": "Email listed with office=Malaysia below -> Malaysia; everyone else -> HK.",
+    "default_for_unknown": "HK"
+  },
+  "roster": [
+    {"email": "alex.chan@example.com", "employeeFullName": "Alex Chan", "preferredName": "Alex Chan", "office": "HK", "birthday": "1-May", "note": "Two people are called Alex: always use the surname"},
+    {"email": "a.kumar@example.com", "employeeFullName": "Arun Kumar (Alex)", "preferredName": "Alex Kumar", "office": "Malaysia", "birthday": "12-Mar"},
+    {"email": "priya.nair@example.com", "employeeFullName": "Priya Nair (Pia)", "preferredName": "Pia", "office": "HK", "birthday": "20-Jul"}
+  ],
+  "fallbackRule": {
+    "description": "Email not in roster[]: derive the display name from the email local part.",
+    "algorithm": "Split the local part on '.', '_' or digits, take the first segment, capitalize. jordan.li@example.com -> 'Jordan'; sam@partner.example -> 'Sam'.",
+    "exceptions": "If the local part is not name-like (random digits, run-together), use the first name from the Gmail display name.",
+    "knownExceptions": [
+      {"email": "user90321@mail.example", "reason": "local part is random digits", "useInstead": "Casey", "displayNameSource": "Casey Park"}
+    ]
+  }
+}

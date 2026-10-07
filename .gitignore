@@ -1,0 +1,9 @@
+# Your real data — never commit
+config.json
+roster.json
+build/
+.sensitive-words
+
+# Local machine files
+.claude/settings.local.json
+.DS_Store

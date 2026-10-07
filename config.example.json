@@ -1,0 +1,16 @@
+{
+  "_comment": "Copy to config.json (git-ignored) and fill in your own values, then run ./install.sh",
+  "gmailAccount": "you@example.com",
+  "timezone": "Asia/Hong_Kong",
+  "leaveCalendarName": "Team Leaves",
+  "leaveCalendarId": "xxxxxxxxxxxxxxxxxxxxxxxxxx@group.calendar.google.com",
+  "attendanceCalendarName": "Team Attendance",
+  "attendanceCalendarId": "xxxxxxxxxxxxxxxxxxxxxxxxxx@group.calendar.google.com",
+  "systemNotificationSender": "noreply@example.com",
+  "gmailLabels": "HR/Leave",
+  "holidayRegion": "Hong Kong",
+  "holidayPrefix": "HK-",
+  "leaveSheetName": "Leave Record 2026",
+  "leaveSheetFileId": "your-google-sheet-file-id",
+  "sheetTabs": "Alex Chan, Jordan, Sam"
+}

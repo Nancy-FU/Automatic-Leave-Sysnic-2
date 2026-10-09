@@ -61,6 +61,7 @@
 
 ```
 README.md                       本文件
+PROJECT_SUMMARY.md              项目成果总结 —— 问题、做法、成果、时间线、经验
 PRD.md                          产品需求文档 —— 目标、日历标注规范、防呆规则（§5 最重要）
 PHASE2_DESIGN.md                Phase 2 设计文档 —— 表格结构、计算规则、浏览器操作细则
 CHANGELOG.md                    变更日志 —— 规则是怎么演变成今天这样的、教训、待办
